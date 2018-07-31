@@ -17,12 +17,12 @@
 		</div><!-- #content -->
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
-			<div class="wrap">
-				<?php
-				get_template_part( 'template-parts/footer/footer', 'widgets' );
-
-				get_template_part( 'template-parts/footer/site', 'info' );
-				?>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 text-center">
+						<a class="" href="/"><img src="<?php echo get_template_directory_uri();?>/assets/images/peacock-logo.png" alt="Logo Peacock animal health"></a>
+					</div>
+				</div>
 			</div><!-- .wrap -->
 		</footer><!-- #colophon -->
 	</div><!-- .site-content-contain -->

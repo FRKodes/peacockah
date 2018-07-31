@@ -49,3 +49,19 @@ function peacock_adding_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'peacock_adding_scripts' );
 
+add_theme_support( 'post-thumbnails' );
+
+function create_banner_post_type() {
+  register_post_type( 'banner',
+    array(
+      'labels' => array(
+        'name' => __( 'Banners' ),
+        'singular_name' => __( 'Banners' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'supports' => array('title', 'editor', 'thumbnail'),
+    )
+  );
+}
+add_action( 'init', 'create_banner_post_type' );

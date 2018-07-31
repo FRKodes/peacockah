@@ -1,6 +1,6 @@
 <?php
 /**
- * The front page template file
+ * The Nosotros template file
  *
  * If the user has selected a static page for their homepage, this is what will
  * appear.
@@ -17,13 +17,11 @@ get_header(); ?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
-		<?php // Show the selected frontpage content.
+		<?php
 		if ( have_posts() ) :
 			while ( have_posts() ) : the_post();
-				get_template_part( 'template-parts/page/content', 'home' );
+				get_template_part( 'template-parts/page/content', 'nosotros' );
 			endwhile;
-		else :
-			get_template_part( 'template-parts/post/content', 'none' );
 		endif; ?>
 
 	</main><!-- #main -->

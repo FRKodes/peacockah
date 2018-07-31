@@ -9,8 +9,8 @@
  */
 
 ?>
-<nav id="site-navigation" class="main-navigation navbar navbar-expand-md navbar-dark fixed-top bg-dark" role="navigation" aria-label="">
-	<a class="navbar-brand" href="#">Peacock</a>
+<nav id="site-navigation" class="main-navigation navbar navbar-expand-md fixed-top" role="navigation" aria-label="">
+	<a class="navbar-brand" href="/"><img src="<?php echo get_template_directory_uri();?>/assets/images/peacock-logo.png" alt="Logo Peacock animal health"></a>
 	<button class="menu-toggle navbar-toggler" aria-expanded="false" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="bar"></span>
 		<span class="bar"></span>

@@ -1,3 +1,150 @@
+gris = #ebebeb
+azul = #1f67d0
+verde = #2f9927
+turquesa = #6bbcab
+naranja = #f66626
+morado = #63349c
+amarillo = #fbcc00
+gris_ = #4f5658
+
+.azul
+	color azul
+.turquesa
+.farmaceutico
+	color turquesa
+
+.naranja
+.biologico
+	color naranja
+
+.amarillo
+.virologico
+	color amarillo
+
+.verde
+	color verde
+.mayus
+	text-transform uppercase
+.italic
+	font-style italic
 body
-	background red
-	
+	background gris
+	font-family 'Titillium Web', sans-serif
+.navbar-toggler
+	border none
+	span.bar
+		background white
+		display block
+		width 30px
+		height 4px
+		margin 3px 0
+.site-content-contain
+	padding-top 0
+.navbar
+	background rgba(black, .7)
+	.nav-link
+		color white
+		text-transform uppercase
+.navbar-brand
+	img
+		width 120px
+.main-banners-container
+	background gray
+	height 320px
+	display block
+	.item
+		width 100%
+		height 100%
+		background-position center center
+		background-size cover
+		padding-top 150px
+		color white
+		p
+			font-size 1.6em
+			padding-right 20px
+			text-shadow 1px 1px 5px #000
+			line-height 1em
+			&.title
+				font-size 2em
+				font-weight 800
+				text-transform uppercase
+				line-height 0.9em
+			
+select.products-selector
+	border 1px solid azul
+	width 100%
+.product-container
+	margin-bottom 40px
+	.inner-container
+		background white
+		padding-bottom 20px
+	img
+		width 100%
+		height auto
+		display block
+.container-fluid.back-white
+	margin-bottom 30px
+.about-us-photo-home
+	height 240px
+	background-size cover
+	background-position center center
+	margin-bottom 20px
+.back-white
+	background white
+	margin-top 40px
+.productos-pah
+	width 140%
+	height auto
+	display inline-block
+	margin-left -20%
+	margin-top -40px
+.site-footer
+	padding-top 30px
+	padding-bottom 30px
+	display block
+	background gris_
+
+@media screen and (min-width: 580px)
+	.main-banners-container
+		height 420px
+	.back-white
+		background white
+		margin-top 40px
+	.productos-pah
+		width 100%
+		height auto
+		display inline-block
+		margin-left 0
+		margin-top -55px
+
+@media screen and (min-width: 768px)
+	.main-banners-container
+		height 520px
+	.productos-pah
+		width 156%
+		margin-left -26%
+		margin-top 25px
+	.about-us-photo-home
+		margin-bottom 0
+	.about-us-block
+		.text-container
+			display flex
+@media screen and (min-width: 992px)
+	.main-banners-container
+		height 620px
+	.productos-pah
+		width 148%
+		margin-left -24%
+		margin-top -8px
+	.about-us-block
+		.text-container
+			padding 15px
+@media screen and (min-width: 1200px)
+	.main-banners-container
+		height 820px
+	.back-white
+		margin-top 80px
+	.productos-pah
+		width 140%
+		margin-left -22%
+		margin-top -85px
