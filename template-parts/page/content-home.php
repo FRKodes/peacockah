@@ -43,7 +43,7 @@
 						<div class="col-xs-12 col-md-5 col-lg-6 about-us-photo-home" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
 						</div>
 						<div class="col-xs-12 col-md-7 col-lg-6 text-container">
-							<p>Ubicado en Guadalajara Jalisco, México. Liderazgo incomparable, con experiencia de más de 30 años le ha permitido a PEACOCK®animal health destacar en el mercado en la salud animal con productos de clase líder de Calidad mundial, extendiéndose con éxito en los mercados internacionales así como cumpliendo con las buenas prácticas de manufactura (GMPs) y con los más altos estándares de calidad que le ha permitido ser pioneros en un mundo globalizado.</p>
+							<?php the_content(); ?>
 						</div>
 					</div>
 				</div>
@@ -56,7 +56,7 @@
 					<h2 class="entry-title text-center azul mayus">Productos</h2>
 				</div>
 
-				<div class="products-selector-container col-sm-10 col-sm-offset-1">
+				<div class="products-selector-container col-sm-10 col-sm-offset-1 hidden-sm hidden-md hidden-lg hidden-xl">
 					<select name="products-selector" id="">
 						<option value="bacteriologicos">Bacteriológicos</option>
 						<option value="virologicos">Virológicos</option>
@@ -65,79 +65,38 @@
 				</div>
 			</div>
 
+			<?php 
+			$terms = get_terms( 'product_category_use' );
+			if ( count( $terms ) > 0 ) {?>
+				<ul class="product_category_use_list"><?php
+			    	foreach ( $terms as $term ) {?> <li class="mayus bold"><a href="/<?php echo $term->slug ?>"><?php echo $term->name ?></a></li><?php }?>
+			    </ul><?php
+			}
+			 ?>
+
 			<div class="row">
-				<div class="product-container col-xs-12 col-sm-6 col-md-4">
-					<div class="inner-container">
-						<div class="photo">
-							<img src="<?php echo get_template_directory_uri();?>/assets/images/thumbnail_derryenlitic.jpg" alt="">
+				<?php $args = array( 'post_type' => 'producto', 'posts_per_page' => 6 );
+				$loop = new WP_Query( $args );
+				while ( $loop->have_posts() ) : $loop->the_post();?>
+					<div class="product-container col-xs-12 col-sm-6 col-md-4">
+						<div class="inner-container">
+							<div class="photo"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></div>
+							<div class="info">
+								<div class="title text-center mayus"><a class="black" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
+								<div class="text-center mayus active-substance">&nbsp;</div><?php 
+								$terms = get_the_terms($post->ID, 'product_category_use');
+								foreach ($terms as $term) {?>
+								    <div class="category mayus text-center italic <?php echo $term->slug; ?>">
+										<?php echo $term->name;?>
+									</div><?php
+								}
+
+								?>
+							</div>
 						</div>
-						<div class="info">
-							<div class="title text-center mayus">Derryenlitic</div>
-							<div class="text-center mayus active-substance">&nbsp;</div>
-							<div class="category mayus text-center italic farmaceutico">Farmacéuticos</div>
-						</div>
-					</div>
-				</div>
-				<div class="product-container col-xs-12 col-sm-6 col-md-4">
-					<div class="inner-container">
-						<div class="photo">
-							<img src="<?php echo get_template_directory_uri();?>/assets/images/thumbnail_11vias.jpg" alt="">
-						</div>
-						<div class="info">
-							<div class="title text-center mayus">Bacterín 11 vías</div>
-							<div class="text-center mayus active-substance">CPMH</div>
-							<div class="category mayus text-center italic biologico">Biológicos</div>
-						</div>
-					</div>
-				</div>
-				<div class="product-container col-xs-12 col-sm-6 col-md-4">
-					<div class="inner-container">
-						<div class="photo">
-							<img src="<?php echo get_template_directory_uri();?>/assets/images/thumbnail_strepto.jpg" alt="">
-						</div>
-						<div class="info">
-							<div class="title text-center mayus">Strepto Guard</div>
-							<div class="text-center mayus active-substance">+Diclofenaco</div>
-							<div class="category mayus text-center italic farmaceutico">Farmacéuticos</div>
-						</div>
-					</div>
-				</div>
-				<div class="product-container col-xs-12 col-sm-6 col-md-4">
-					<div class="inner-container">
-						<div class="photo">
-							<img src="<?php echo get_template_directory_uri();?>/assets/images/thumbnail_decto1pc.jpg" alt="">
-						</div>
-						<div class="info">
-							<div class="title text-center mayus">Dectomaster</div>
-							<div class="text-center mayus active-substance">1% Prolong</div>
-							<div class="category mayus text-center italic farmaceutico">Farmacéuticos</div>
-						</div>
-					</div>
-				</div>
-				<div class="product-container col-xs-12 col-sm-6 col-md-4">
-					<div class="inner-container">
-						<div class="photo">
-							<img src="<?php echo get_template_directory_uri();?>/assets/images/thumbnail_bacterin_doble-bovina.jpg" alt="">
-						</div>
-						<div class="info">
-							<div class="title text-center mayus">Bacterín 2</div>
-							<div class="text-center mayus active-substance">Doble bovina</div>
-							<div class="category mayus text-center italic biologico">Biológicos</div>
-						</div>
-					</div>
-				</div>
-				<div class="product-container col-xs-12 col-sm-6 col-md-4">
-					<div class="inner-container">
-						<div class="photo">
-							<img src="<?php echo get_template_directory_uri();?>/assets/images/thumbnail_vaccine.jpg" alt="">
-						</div>
-						<div class="info">
-							<div class="title text-center mayus">Vaccine FC Antrax</div>
-							<div class="text-center mayus active-substance">Doble Bovina</div>
-							<div class="category mayus text-center italic virologico">Virológico</div>
-						</div>
-					</div>
-				</div>
+					</div><?php
+				endwhile;
+				wp_reset_query();?>
 			</div>
 
 			<div class="row">
@@ -157,7 +116,5 @@
 				</div>
 			</div>
 		</div>
-
-		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->

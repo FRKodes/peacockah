@@ -56,7 +56,7 @@ function create_banner_post_type() {
     array(
       'labels' => array(
         'name' => __( 'Banners' ),
-        'singular_name' => __( 'Banners' )
+        'singular_name' => __( 'Banner' )
       ),
       'public' => true,
       'has_archive' => true,
@@ -65,3 +65,90 @@ function create_banner_post_type() {
   );
 }
 add_action( 'init', 'create_banner_post_type' );
+
+function create_product_post_type() {
+
+	register_post_type( 'producto',
+		array(
+		'labels' => array(
+			'name' => __( 'Productos' ),
+			'singular_name' => __( 'Producto' ),
+			'menu_name'           => __( 'Producto'),
+			'all_items'           => __( 'Todos los productos'),
+			'view_item'           => __( 'Ver producto'),
+			'add_new_item'        => __( 'Agregar nuevo producto'),
+			'add_new'             => __( 'Agregar nuevo'),
+			'edit_item'           => __( 'Editar producto'),
+			'update_item'         => __( 'Actualizar producto'),
+			'search_items'        => __( 'Buscar producto'),
+			'not_found'           => __( 'Producto no encontrado'),
+			'not_found_in_trash'  => __( 'Producto no encontrado en la papelera')
+		),
+		'public' 				=> true,
+		'has_archive' 			=> true,
+		'supports' 				=> array('title', 'editor', 'thumbnail')
+		)
+  );
+
+}
+add_action( 'init', 'create_product_post_type' );
+
+
+add_action( 'init', 'create_product_tax' );
+
+function create_product_tax() {
+	register_taxonomy(
+		'product_category',
+		'producto',
+		array(
+			'label' => __( 'Categoría de Producto' ),
+			'rewrite' => array( 'slug' => 'categoria-producto' ),
+			'hierarchical' => true,
+		)
+	);
+}
+
+add_action( 'init', 'create_product_tax_uso' );
+
+function create_product_tax_uso() {
+	register_taxonomy(
+		'product_category_use',
+		'producto',
+		array(
+			'label' => __( 'Categoría de Uso' ),
+			'rewrite' => array( 'slug' => 'uso' ),
+			'hierarchical' => true,
+		)
+	);
+}
+
+
+
+
+
+
+
+
+// $args = array(
+// 	'label'               => __( 'Productos' ),
+// 	'description'         => __( 'Productos Peacock Animal Health'),
+// 	'labels'              => $labels,
+// 	'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields' ),
+// 	'taxonomies'          => array( 'product_category' ), 
+// 	'hierarchical'        => true,
+// 	'public'              => true,
+// 	'show_ui'             => true,
+// 	'show_in_menu'        => true,
+// 	'show_in_nav_menus'   => true,
+// 	'show_in_admin_bar'   => true,
+// 	'menu_position'       => 5,
+// 	'can_export'          => true,
+// 	'has_archive'         => true,
+// 	'exclude_from_search' => false,
+// 	'publicly_queryable'  => true,
+// 	'capability_type'     => 'page',
+// );
+
+
+
+

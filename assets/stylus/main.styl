@@ -9,6 +9,8 @@ gris_ = #4f5658
 
 .azul
 	color azul
+.black
+	color black
 .turquesa
 .farmaceutico
 	color turquesa
@@ -27,6 +29,8 @@ gris_ = #4f5658
 	text-transform uppercase
 .italic
 	font-style italic
+.bold
+	font-weight 700
 body
 	background gris
 	font-family 'Titillium Web', sans-serif
@@ -69,7 +73,6 @@ body
 				font-weight 800
 				text-transform uppercase
 				line-height 0.9em
-			
 select.products-selector
 	border 1px solid azul
 	width 100%
@@ -118,8 +121,21 @@ select.products-selector
 		margin-top -55px
 
 @media screen and (min-width: 768px)
+	.navbar
+		border-bottom 2px solid gris
+	.navbar-expand-md
+		.navbar-nav
+			width 100%
+			justify-content flex-end
+			.nav-link
+				font-size .9em
+			img
+				width 130px
 	.main-banners-container
 		height 520px
+		.item
+			p.title
+				font-size 2.6em
 	.productos-pah
 		width 156%
 		margin-left -26%
@@ -129,21 +145,49 @@ select.products-selector
 	.about-us-block
 		.text-container
 			display flex
+	.product_category_use_list
+		li
+			display inline-block
+			padding 0px 5px
+			border-right 1px solid black
+			a
+				color black
 @media screen and (min-width: 992px)
+	.navbar-expand-md
+		.navbar-nav
+			.nav-link
+				font-size 1em
+	.navbar-brand
+		img
+			width 200px
 	.main-banners-container
 		height 620px
+		.item
+			padding-top 250px
+			p.title
+				font-size 3em
 	.productos-pah
 		width 148%
 		margin-left -24%
 		margin-top -8px
 	.about-us-block
 		.text-container
-			padding 15px
+			padding 26px 10px
 @media screen and (min-width: 1200px)
+	.navbar-brand
+		img
+			width 230px
 	.main-banners-container
 		height 820px
+		.item
+			padding-top 350px
+			p.title
+				font-size 3.4em
 	.back-white
 		margin-top 80px
+	.about-us-block
+		.text-container
+			padding 40px
 	.productos-pah
 		width 140%
 		margin-left -22%
