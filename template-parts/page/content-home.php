@@ -64,15 +64,19 @@
 					</select>
 				</div>
 			</div>
-
-			<?php 
-			$terms = get_terms( 'product_category_use' );
-			if ( count( $terms ) > 0 ) {?>
-				<ul class="product_category_use_list"><?php
-			    	foreach ( $terms as $term ) {?> <li class="mayus bold"><a href="/<?php echo $term->slug ?>"><?php echo $term->name ?></a></li><?php }?>
-			    </ul><?php
-			}
-			 ?>
+			
+			<div class="col-xs-12 col-sm-12">
+				<ul class="product_category_use_list"><?php 
+					$terms = get_terms( 'product_category_use' );
+					if ( count( $terms ) > 0 ) {
+						foreach ( $terms as $term ) {?> <li class="mayus"><a href="/<?php echo $term->slug ?>"><?php echo $term->name ?></a></li><?php }
+					}
+					$terms_ = get_terms( 'product_category' );
+					if ( count( $terms_ ) > 0 ) {
+						foreach ( $terms_ as $term_ ) {?> <li class="mayus"><a href="/<?php echo $term_->slug ?>"><?php echo $term_->name ?></a></li><?php }
+					}?>
+				</ul>
+			</div>
 
 			<div class="row">
 				<?php $args = array( 'post_type' => 'producto', 'posts_per_page' => 6 );
@@ -83,10 +87,10 @@
 							<div class="photo"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></div>
 							<div class="info">
 								<div class="title text-center mayus"><a class="black" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
-								<div class="text-center mayus active-substance">&nbsp;</div><?php 
+								<div class="text-center mayus active-substance"><?php (get_field('sustancia')) ? the_field('sustancia') : '&nbsp;' ?></div><?php 
 								$terms = get_the_terms($post->ID, 'product_category_use');
 								foreach ($terms as $term) {?>
-								    <div class="category mayus text-center italic <?php echo $term->slug; ?>">
+									<div class="category mayus text-center italic <?php echo $term->slug; ?>">
 										<?php echo $term->name;?>
 									</div><?php
 								}

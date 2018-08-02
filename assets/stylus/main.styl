@@ -12,15 +12,18 @@ gris_ = #4f5658
 .black
 	color black
 .turquesa
-.farmaceutico
+.farmaceuticos
 	color turquesa
 
+.anti-microbianos
+	color gris_
+	
 .naranja
-.biologico
+.biologicos
 	color naranja
 
 .amarillo
-.virologico
+.virologicos
 	color amarillo
 
 .verde
@@ -31,11 +34,15 @@ gris_ = #4f5658
 	font-style italic
 .bold
 	font-weight 700
+.product_category_use_list
+	display none
 body
 	background gris
 	font-family 'Titillium Web', sans-serif
 .navbar-toggler
 	border none
+	float right
+	padding 0.4em 0em
 	span.bar
 		background white
 		display block
@@ -45,10 +52,15 @@ body
 .site-content-contain
 	padding-top 0
 .navbar
-	background rgba(black, .7)
+	background rgba(black, .85)
 	.nav-link
 		color white
 		text-transform uppercase
+.sub-menu.dropdown-menu
+	background none
+.top-bar
+	padding-left 0
+	padding-right 0
 .navbar-brand
 	img
 		width 120px
@@ -81,10 +93,14 @@ select.products-selector
 	.inner-container
 		background white
 		padding-bottom 20px
-	img
-		width 100%
-		height auto
-		display block
+		img
+			width 100%
+			height auto
+			display block
+	.info
+		.title
+			font-size 1.2em
+			font-weight 700
 .container-fluid.back-white
 	margin-bottom 30px
 .about-us-photo-home
@@ -101,6 +117,22 @@ select.products-selector
 	display inline-block
 	margin-left -20%
 	margin-top -40px
+article.producto
+	padding-top 70px
+	.entry-header
+		margin-bottom 30px
+		img
+			width 100%
+			height auto
+	.entry-content
+		.entry-title
+			font-size 1.8em
+			margin-bottom 0
+		.sustancia
+			font-size 1.2em
+			margin 0
+		.category
+			margin-bottom 10px
 .site-footer
 	padding-top 30px
 	padding-bottom 30px
@@ -121,6 +153,8 @@ select.products-selector
 		margin-top -55px
 
 @media screen and (min-width: 768px)
+	.products-selector-container
+		display none
 	.navbar
 		border-bottom 2px solid gris
 	.navbar-expand-md
@@ -128,14 +162,20 @@ select.products-selector
 			width 100%
 			justify-content flex-end
 			.nav-link
-				font-size .9em
+				font-size .8em
 			img
 				width 130px
+		.navbar-collapse
+			display inline-block !important
+			width 76%
 	.main-banners-container
 		height 520px
 		.item
 			p.title
 				font-size 2.6em
+	.active-substance
+		min-height 1.5em
+		display block
 	.productos-pah
 		width 156%
 		margin-left -26%
@@ -146,12 +186,21 @@ select.products-selector
 		.text-container
 			display flex
 	.product_category_use_list
+		display inline-block
+		font-size .7em
+		padding-left 0
+		text-align center
+		width 100%
 		li
 			display inline-block
 			padding 0px 5px
 			border-right 1px solid black
 			a
 				color black
+	article.producto
+		.entry-content
+			.entry-title
+				font-size 2em
 @media screen and (min-width: 992px)
 	.navbar-expand-md
 		.navbar-nav
@@ -173,6 +222,10 @@ select.products-selector
 	.about-us-block
 		.text-container
 			padding 26px 10px
+	.product_category_use_list
+		font-size .9em
+	article.producto
+		padding-top 90px
 @media screen and (min-width: 1200px)
 	.navbar-brand
 		img
@@ -192,3 +245,7 @@ select.products-selector
 		width 140%
 		margin-left -22%
 		margin-top -85px
+	article.producto
+		.entry-content
+			.entry-title
+				font-size 2.8em

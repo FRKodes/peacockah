@@ -17,6 +17,7 @@ gulp.task('concat', function() {
 				'./assets/css/theme-base.css',
 				'./assets/css/bootstrap.css',
 				'./assets/css/slick.css',
+				'./assets/css/icons-font.css',
 				'./assets/css/main.css'
 				])
 		.pipe(concat('peacock-style.css'))
