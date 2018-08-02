@@ -22,8 +22,11 @@ add_action( 'init', 'register_my_menus' );
 function register_my_menus() {
 	register_nav_menus(
 		array(
-		'top-menu' => __( 'Menu Top' ),
-		'footer-menu' => __( 'Menu Footer' )
+		'top-menu' 				=> __( 'Menu Top' ),
+		'footer-menu-left' 		=> __( 'Menu Footer Left' ),
+		'footer-menu-center-01'	=> __( 'Menu Footer Center 1' ),
+		'footer-menu-center-02'	=> __( 'Menu Footer Center 2' ),
+		'footer-menu-right' 	=> __( 'Menu Footer Right' )
 		)
 	);
 }
@@ -33,13 +36,6 @@ function peacock_adding_styles() {
 	wp_enqueue_style('peacock_stylesheet');
 }
 add_action( 'wp_enqueue_scripts', 'peacock_adding_styles' );
-
-
-// function no_more_jquery(){
-//     wp_deregister_script('jquery');
-// }
-// add_action('wp_enqueue_scripts', 'no_more_jquery');
-
 
 wp_enqueue_script( 'popper_script', get_template_directory_uri() . '/assets/js/popper.min.js', array(), '1.0', true );
 
@@ -53,15 +49,25 @@ add_theme_support( 'post-thumbnails' );
 
 function create_banner_post_type() {
   register_post_type( 'banner',
-    array(
-      'labels' => array(
-        'name' => __( 'Banners' ),
-        'singular_name' => __( 'Banner' )
-      ),
-      'public' => true,
-      'has_archive' => true,
-      'supports' => array('title', 'editor', 'thumbnail'),
-    )
+	array(
+	  'labels' => array(
+		'name' => __( 'Banners' ),
+		'singular_name' => __( 'Banner' ),
+		'menu_name'				=> __( 'Banner'),
+		'all_items'				=> __( 'Todos los banners'),
+		'view_item'				=> __( 'Ver Banner'),
+		'add_new_item'			=> __( 'Agregar nuevo banner'),
+		'add_new'				=> __( 'Agregar nuevo'),
+		'edit_item'				=> __( 'Editar banner'),
+		'update_item'			=> __( 'Actualizar Banner'),
+		'search_items'			=> __( 'Buscar banner'),
+		'not_found'				=> __( 'Banner no encontrado'),
+		'not_found_in_trash'	=> __( 'Banner no encontrado en la papelera')
+	  ),
+	  'public' => true,
+	  'has_archive' => true,
+	  'supports' => array('title', 'editor', 'thumbnail'),
+	)
   );
 }
 add_action( 'init', 'create_banner_post_type' );
@@ -71,18 +77,18 @@ function create_product_post_type() {
 	register_post_type( 'producto',
 		array(
 		'labels' => array(
-			'name' => __( 'Productos' ),
-			'singular_name' => __( 'Producto' ),
-			'menu_name'           => __( 'Producto'),
-			'all_items'           => __( 'Todos los productos'),
-			'view_item'           => __( 'Ver producto'),
-			'add_new_item'        => __( 'Agregar nuevo producto'),
-			'add_new'             => __( 'Agregar nuevo'),
-			'edit_item'           => __( 'Editar producto'),
-			'update_item'         => __( 'Actualizar producto'),
-			'search_items'        => __( 'Buscar producto'),
-			'not_found'           => __( 'Producto no encontrado'),
-			'not_found_in_trash'  => __( 'Producto no encontrado en la papelera')
+			'name' 					=> __( 'Productos' ),
+			'singular_name'			=> __( 'Producto' ),
+			'menu_name'				=> __( 'Producto'),
+			'all_items'				=> __( 'Todos los productos'),
+			'view_item'				=> __( 'Ver producto'),
+			'add_new_item'			=> __( 'Agregar nuevo producto'),
+			'add_new'				=> __( 'Agregar nuevo'),
+			'edit_item'				=> __( 'Editar producto'),
+			'update_item'			=> __( 'Actualizar producto'),
+			'search_items'			=> __( 'Buscar producto'),
+			'not_found'				=> __( 'Producto no encontrado'),
+			'not_found_in_trash'	=> __( 'Producto no encontrado en la papelera')
 		),
 		'public' 				=> true,
 		'has_archive' 			=> true,
@@ -121,34 +127,4 @@ function create_product_tax_uso() {
 		)
 	);
 }
-
-
-
-
-
-
-
-
-// $args = array(
-// 	'label'               => __( 'Productos' ),
-// 	'description'         => __( 'Productos Peacock Animal Health'),
-// 	'labels'              => $labels,
-// 	'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields' ),
-// 	'taxonomies'          => array( 'product_category' ), 
-// 	'hierarchical'        => true,
-// 	'public'              => true,
-// 	'show_ui'             => true,
-// 	'show_in_menu'        => true,
-// 	'show_in_nav_menus'   => true,
-// 	'show_in_admin_bar'   => true,
-// 	'menu_position'       => 5,
-// 	'can_export'          => true,
-// 	'has_archive'         => true,
-// 	'exclude_from_search' => false,
-// 	'publicly_queryable'  => true,
-// 	'capability_type'     => 'page',
-// );
-
-
-
 

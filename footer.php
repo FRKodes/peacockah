@@ -19,11 +19,27 @@
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12 col-sm-12 text-center">
+					<div class="col-xs-12 col-sm-12 text-center m-b-40">
 						<a class="" href="/"><img src="<?php echo get_template_directory_uri();?>/assets/images/peacock-logo.png" alt="Logo Peacock animal health"></a>
 					</div>
 				</div>
-			</div><!-- .wrap -->
+				<div class="row">
+					<div class="col-xs-12 col-md-4">
+						<p class="footer-title mayus text-center">Empresa</p>
+						<?php wp_nav_menu( array( 'theme_location' => 'footer-menu-left', 'menu_id' => 'menu-footer-left') ); ?>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<p class="footer-title mayus text-center">Productos por clase</p>
+						<?php wp_nav_menu( array( 'theme_location' => 'footer-menu-center-01', 'menu_id' => 'menu-footer-center-01') ); ?>
+						
+						<?php wp_nav_menu( array( 'theme_location' => 'footer-menu-center-02', 'menu_id' => 'menu-footer-center-02') ); ?>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<p class="footer-title mayus text-center">Productos por especie</p>
+						<?php wp_nav_menu( array( 'theme_location' => 'footer-menu-right', 'menu_id' => 'menu-footer-right') ); ?>
+					</div>	
+				</div>
+			</div>
 		</footer><!-- #colophon -->
 	</div><!-- .site-content-contain -->
 </div><!-- #page -->

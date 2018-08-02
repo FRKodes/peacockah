@@ -93,9 +93,7 @@
 									<div class="category mayus text-center italic <?php echo $term->slug; ?>">
 										<?php echo $term->name;?>
 									</div><?php
-								}
-
-								?>
+								}?>
 							</div>
 						</div>
 					</div><?php
@@ -109,7 +107,7 @@
 				</div>
 			</div>
 
-			<div class="row back-white">
+			<div class="row back-white m-b-40">
 				<div class="col-xs-12 col-md-5 col-lg-5 col-xl-6 text-center">
 					<img class="productos-pah" src="<?php echo get_template_directory_uri();?>/assets/images/productos-peacock-home.png" alt="productos Peacock Animal Health">
 				</div>
