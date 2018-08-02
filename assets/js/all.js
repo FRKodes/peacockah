@@ -75,4 +75,15 @@ $('ul.dropdown-menu ul').addClass( 'dropdown-submenu' ).removeClass('dropdown-me
 
 
 
+
+$('.main-banners-container').slick({
+	infinite: true,
+	dots: true,
+	slidesToShow: 1,
+	slidesToScroll: 1
+});
+
+
+
+
 console.log('ok');

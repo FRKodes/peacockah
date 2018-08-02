@@ -53,6 +53,7 @@ body
 		margin 3px 0
 .site-content-contain
 	padding-top 0
+	overflow-x hidden
 .navbar
 	background rgba(black, .85)
 	.nav-link
@@ -72,13 +73,13 @@ body
 	display block
 	.item
 		width 100%
-		height 100%
+		height 320px
 		background-position center center
 		background-size cover
-		padding-top 150px
+		padding-top 130px
 		color white
 		p
-			font-size 1.6em
+			font-size 1em
 			padding-right 20px
 			text-shadow 1px 1px 5px #000
 			line-height 1em
@@ -87,6 +88,33 @@ body
 				font-weight 800
 				text-transform uppercase
 				line-height 0.9em
+.slick-arrow
+	position absolute
+	display none !important
+.slick-slide
+	div
+		height 100%
+.slick-dots
+	text-align center
+	margin -40px 0 0 0
+	padding 0
+	position relative
+	li
+		display inline-block
+		width 20px
+		height 20px
+		background white
+		border-radius 50%
+		margin 0 5px
+		overflow hidden
+		button
+			color transparent
+			border none
+			background transparent
+		&.slick-active
+			background transparent
+			border 2px solid white
+			
 select.products-selector
 	border 1px solid azul
 	width 100%
@@ -190,6 +218,7 @@ article.producto
 	.main-banners-container
 		height 520px
 		.item
+			height 520px
 			p.title
 				font-size 2.6em
 	.active-substance
@@ -250,8 +279,11 @@ article.producto
 		height 620px
 		.item
 			padding-top 250px
+			height 620px
 			p.title
 				font-size 3em
+			p
+				font-size 1.3em
 	.productos-pah
 		width 148%
 		margin-left -24%
@@ -270,6 +302,7 @@ article.producto
 	.main-banners-container
 		height 820px
 		.item
+			height 820px
 			padding-top 350px
 			p.title
 				font-size 3.4em
