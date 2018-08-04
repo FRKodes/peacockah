@@ -15,7 +15,7 @@
 	<div class="container">
 		<div class="row">
 			<header class="entry-header col-xs-12 col-sm-5 col-md-5">
-				<div class="product-image"><?php the_post_thumbnail() ?></div>
+				<div class="product-image"><img src="<?php the_field('detail_image') ?>" alt="<?php the_title() ?>"></div>
 			</header>
 			<div class="entry-content col-xs-12 col-sm-7 col-md-7">
 				<?php the_title( '<h1 class="entry-title bold">', '</h1>' ); ?>
