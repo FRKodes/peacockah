@@ -23,7 +23,7 @@
 				$terms = get_the_terms($post->ID, 'product_category_use');
 				foreach ($terms as $term) {?>
 				    <div class="category mayus italic <?php echo $term->slug; ?>">
-						<?php echo $term->name;?>
+						<a class="<?php echo $term->slug;?>" href="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/uso/<?php echo $term->slug;?>"><?php echo $term->name;?></a>
 					</div><?php
 				}
 				the_content(); ?>

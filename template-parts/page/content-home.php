@@ -10,8 +10,10 @@
  * @version 1.0
  */
 
+/*
+ * BANNERS PRINCIPALES
+ */
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<div class="main-banners-container">
@@ -21,7 +23,7 @@
 				<div class="item" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
 					<div class="container">
 						<div class="row">
-							<div class="col-xs-12 col-sm-6">
+							<div class="col-xs-12 col-sm-6 <?php if(get_field('alineacion_texto')){ echo "ml-auto " .  get_field('alineacion_texto'); } ?>">
 								<p class="title"><?php the_title();?></p>
 								<?php the_content(); ?>
 							</div>
@@ -34,69 +36,57 @@
 		</div>
 	</header><!-- .entry-header -->
 	
-
 	<div class="entry-content">
 		<div class="container-fluid back-white">
 			<div class="row">
 				<div class="container">
 					<div class="row about-us-block">
-						<div class="col-xs-12 col-md-5 col-lg-6 about-us-photo-home" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
-						</div>
-						<div class="col-xs-12 col-md-7 col-lg-6 text-container">
-							<?php the_content(); ?>
-						</div>
+						<div class="col-xs-12 col-md-5 col-lg-6 about-us-photo-home" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)"></div>
+						<div class="col-xs-12 col-md-7 col-lg-6 text-container"><?php the_content(); ?></div>
 					</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-12">
-					<h2 class="entry-title text-center azul mayus">Productos</h2>
-				</div>
-
+			<div class="row"><?php 
+				$terms = get_terms( 'product_category_use' );
+				$terms_ = get_terms( 'product_category' );?>
+				<div class="col-xs-12 col-sm-12"><h2 class="entry-title text-center azul mayus">Productos</h2></div>
 				<div class="products-selector-container col-sm-10 col-sm-offset-1 hidden-sm hidden-md hidden-lg hidden-xl">
-					<select name="products-selector" id="">
-						<option value="bacteriologicos">Bacteriológicos</option>
-						<option value="virologicos">Virológicos</option>
-						<option value="desparasitantes">Desparasitantes</option>
+					<select name="products-selector" id=""><?php
+						if ( count( $terms ) > 0 ) {
+							foreach ( $terms as $term ) {?> 
+								<option value="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/uso/<?php echo $term->slug ?>"><?php echo $term->name ?></option><?php
+							}
+						}
+						if ( count( $terms_ ) > 0 ) {
+							foreach ( $terms_ as $term_ ) {?> 
+								<option value="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/categoria-producto/<?php echo $term_->slug ?>"><?php echo $term_->name ?></option><?php 
+							}
+						}?>
 					</select>
 				</div>
 			</div>
 			
 			<div class="col-xs-12 col-sm-12">
 				<ul class="product_category_use_list"><?php 
-					$terms = get_terms( 'product_category_use' );
 					if ( count( $terms ) > 0 ) {
-						foreach ( $terms as $term ) {?> <li class="mayus"><a href="/<?php echo $term->slug ?>"><?php echo $term->name ?></a></li><?php }
+						foreach ( $terms as $term ) {?> <li class="mayus"><a href="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/uso/<?php echo $term->slug ?>"><?php echo $term->name ?></a></li><?php }
 					}
-					$terms_ = get_terms( 'product_category' );
 					if ( count( $terms_ ) > 0 ) {
-						foreach ( $terms_ as $term_ ) {?> <li class="mayus"><a href="/<?php echo $term_->slug ?>"><?php echo $term_->name ?></a></li><?php }
+						foreach ( $terms_ as $term_ ) {?> <li class="mayus"><a href="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/categoria-producto/<?php echo $term_->slug ?>"><?php echo $term_->name ?></a></li><?php }
 					}?>
 				</ul>
 			</div>
 
 			<div class="row">
-				<?php $args = array( 'post_type' => 'producto', 'posts_per_page' => 6 );
+				<?php $args = array( 'post_type' => 'producto', 'posts_per_page' => 12);
 				$loop = new WP_Query( $args );
-				while ( $loop->have_posts() ) : $loop->the_post();?>
-					<div class="product-container col-xs-12 col-sm-6 col-md-4">
-						<div class="inner-container">
-							<div class="photo"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></div>
-							<div class="info">
-								<div class="title text-center mayus"><a class="black" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
-								<div class="text-center mayus active-substance"><?php (get_field('sustancia')) ? the_field('sustancia') : '&nbsp;' ?></div><?php 
-								$terms = get_the_terms($post->ID, 'product_category_use');
-								foreach ($terms as $term) {?>
-									<div class="category mayus text-center italic <?php echo $term->slug; ?>">
-										<?php echo $term->name;?>
-									</div><?php
-								}?>
-							</div>
-						</div>
-					</div><?php
+				while ( $loop->have_posts() ) : $loop->the_post();
+					if (get_field('show_at_home') == 1) {
+						get_template_part( 'template-parts/product/content', 'mini' );
+					}
 				endwhile;
 				wp_reset_query();?>
 			</div>
