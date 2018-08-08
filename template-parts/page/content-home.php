@@ -69,15 +69,17 @@
 				</div>
 			</div>
 			
-			<div class="col-xs-12 col-sm-12">
-				<ul class="product_category_use_list"><?php 
-					if ( count( $terms ) > 0 ) {
-						foreach ( $terms as $term ) {?> <li class="mayus"><a href="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/uso/<?php echo $term->slug ?>"><?php echo $term->name ?></a></li><?php }
-					}
-					if ( count( $terms_ ) > 0 ) {
-						foreach ( $terms_ as $term_ ) {?> <li class="mayus"><a href="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/categoria-producto/<?php echo $term_->slug ?>"><?php echo $term_->name ?></a></li><?php }
-					}?>
-				</ul>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12">
+					<ul class="product_category_use_list"><?php 
+						if ( count( $terms ) > 0 ) {
+							foreach ( $terms as $term ) {?> <li class="mayus"><a href="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/uso/<?php echo $term->slug ?>"><?php echo $term->name ?></a></li><?php }
+						}
+						if ( count( $terms_ ) > 0 ) {
+							foreach ( $terms_ as $term_ ) {?> <li class="mayus"><a href="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/categoria-producto/<?php echo $term_->slug ?>"><?php echo $term_->name ?></a></li><?php }
+						}?>
+					</ul>
+				</div>
 			</div>
 
 			<div class="row">
