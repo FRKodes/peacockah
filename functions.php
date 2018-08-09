@@ -32,7 +32,7 @@ function register_my_menus() {
 }
 
 function peacock_adding_styles() {
-	wp_register_style('peacock_stylesheet', get_template_directory_uri() .'/assets/css/peacock-style.css' );
+	wp_register_style('peacock_stylesheet', get_template_directory_uri() .'/assets/css/peacock-style.css', array(), '1.0' );
 	wp_enqueue_style('peacock_stylesheet');
 }
 add_action( 'wp_enqueue_scripts', 'peacock_adding_styles' );

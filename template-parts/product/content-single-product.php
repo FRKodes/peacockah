@@ -24,6 +24,14 @@
 				foreach ($terms as $term) {?>
 				    <div class="category mayus italic <?php echo $term->slug; ?>">
 						<a class="<?php echo $term->slug;?>" href="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/uso/<?php echo $term->slug;?>"><?php echo $term->name;?></a>
+					</div>
+					<div class="icons">
+						<?php
+						$categories = get_the_terms( $post->ID, 'product_category');
+						foreach ($categories as $category) {?>
+							<span class="icon-<?php echo strtolower($category->name); ?>"></span><?php
+						}
+						?>
 					</div><?php
 				}
 				the_content(); ?>

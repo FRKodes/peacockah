@@ -44,10 +44,19 @@
 .icon-caballo:before {
   content: "\62";
 }
+.icon-equinos:before {
+  content: "\62";
+}
 .icon-cabra:before {
   content: "\63";
 }
+.icon-caprinos:before {
+  content: "\63";
+}
 .icon-cerdo:before {
+  content: "\64";
+}
+.icon-porcinos:before {
   content: "\64";
 }
 .icon-fb:before {
@@ -62,9 +71,18 @@
 .icon-oveja:before {
   content: "\68";
 }
+.icon-ovinos:before {
+  content: "\68";
+}
 .icon-perro:before {
   content: "\69";
 }
+.icon-caninos:before {
+  content: "\69";
+}
 .icon-vaca:before {
+  content: "\6a";
+}
+.icon-bovinos:before {
   content: "\6a";
 }
