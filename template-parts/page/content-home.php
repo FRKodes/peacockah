@@ -83,7 +83,7 @@
 			</div>
 
 			<div class="row">
-				<?php $args = array( 'post_type' => 'producto', 'posts_per_page' => 12);
+				<?php $args = array( 'post_type' => 'producto', 'posts_per_page' => 24);
 				$loop = new WP_Query( $args );
 				while ( $loop->have_posts() ) : $loop->the_post();
 					if (get_field('show_at_home') == 1) {
