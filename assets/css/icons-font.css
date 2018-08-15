@@ -38,6 +38,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
+
+
 .icon-ave:before {
   content: "\61";
 }
@@ -70,6 +74,24 @@
 }
 .icon-gato:before {
   content: "\6b";
+}
+.icon-gallo:before {
+  content: "\6c";
+}
+.icon-guajolote:before {
+  content: "\6d";
+}
+.icon-pollito:before {
+  content: "\6e";
+}
+.icon-gallos:before {
+  content: "\6c";
+}
+.icon-guajolotes:before {
+  content: "\6d";
+}
+.icon-pollos:before {
+  content: "\6e";
 }
 .icon-felinos:before {
   content: "\6b";
