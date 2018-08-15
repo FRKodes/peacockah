@@ -93,6 +93,9 @@
 .icon-pollos:before {
   content: "\6e";
 }
+.icon-gallinas:before {
+  content: "\61";
+}
 .icon-felinos:before {
   content: "\6b";
 }
