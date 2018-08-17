@@ -104,9 +104,7 @@
 					<img class="productos-pah" src="<?php echo get_template_directory_uri();?>/assets/images/productos-peacock-home.png" alt="productos Peacock Animal Health">
 				</div>
 				<div class="col-xs-12 col-md-7 col-lg-7 col-xl-6">
-					<p>Somos una empresa con presencia en México y Estados Unidos, desarrollamos productos especializados para el cuidado de ganado y animales domésticos con la mejor calidad en el mercado. </p>
-					<p>Envíanos un correo a <a title="Enviar correo a Peacock Animal Health" href="mailto:ventas@peacockanimalhealth.com">ventas@peacockanimalhealth.com</a> para solicitar información acerca de nuestros productos y como convertirte en distribuidor de Peacock Animal Health.</p>
-					<p><a href="">ENCUENTRA PRODUCTOS PEACOCK</a></p>
+					<?php the_field('texto_bottom') ?>
 				</div>
 			</div>
 		</div>
