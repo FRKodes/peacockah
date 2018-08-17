@@ -1,4 +1,4 @@
-<div class="product-container col col-sm-6 col-md-4">
+<div class="product-container col-sm-6 col-lg-4">
 	<div class="inner-container">
 		<div class="photo"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></div>
 		<div class="info">
