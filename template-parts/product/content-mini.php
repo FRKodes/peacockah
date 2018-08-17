@@ -9,6 +9,7 @@
 				<div class="category mayus text-center italic">
 					<a class="<?php echo $term->slug; ?>" href="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/uso/<?php echo $term->slug; ?>"><?php echo $term->name;?></a>
 				</div><?php
+				break;
 			}?>
 		</div>
 	</div>
