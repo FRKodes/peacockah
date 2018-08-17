@@ -123,7 +123,6 @@ body
 		&.slick-active
 			background transparent
 			border 2px solid white
-			
 select.products-selector
 	border 1px solid azul
 	width 100%
@@ -131,7 +130,7 @@ li.gallos
 li.gallinas
 li.guajolotes
 li.pollos
-	display none
+	display none !important
 .product-container
 	margin-bottom 40px
 	.inner-container
@@ -282,6 +281,8 @@ article.producto
 			display inline-block
 			padding 0px 5px
 			border-right 1px solid black
+			&:last-of-type
+				border-right none
 			a
 				color black
 	article.producto
