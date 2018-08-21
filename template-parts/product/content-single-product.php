@@ -33,6 +33,7 @@
 						}
 						?>
 					</div><?php
+					break;
 				}
 				the_content(); ?>
 			</div><!-- .entry-content -->

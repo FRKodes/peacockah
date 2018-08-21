@@ -6,6 +6,7 @@ naranja = #f66626
 morado = #63349c
 amarillo = #fbcc00
 gris_ = #4f5658
+azul_ = #0f78a8
 
 .azul
 	color azul
@@ -13,17 +14,22 @@ gris_ = #4f5658
 	color black
 .turquesa
 a.farmaceuticos
+a.antibioticos
 	color turquesa
 
 a.anti-microbianos
 	color gris_
-	
+
+.azul_
+a.antiparasitario
+	color azul_	
 .naranja
 a.biologicos
+a.bacterinas
 	color naranja
-
 .amarillo
 a.virologicos
+a.antibioticos
 	color amarillo
 
 .verde
@@ -66,6 +72,12 @@ body
 		text-transform uppercase
 .sub-menu.dropdown-menu
 	background none
+.dropdown-menu
+	background none
+.sub-menu.dropdown-menu
+	padding-left 20px
+    padding-top 0
+    padding-bottom 0
 .top-bar
 	padding-left 0
 	padding-right 0
@@ -227,6 +239,19 @@ article.producto
 				color white
 				text-transform uppercase
 				font-size .9em
+.pagination
+	width 100%
+	padding 20px 0
+	.nav-links
+		width 100%
+		text-align center
+		text-transform uppercase
+		.page-numbers
+			margin 0 10px
+			span.meta-nav.screen-reader-text
+				display none
+	h2.screen-reader-text
+		display none
 @media screen and (min-width: 580px)
 	.main-banners-container
 		height 420px
@@ -319,7 +344,47 @@ article.producto
 				font-size 1em
 	.navbar-brand
 		img
-			width 200px
+			width 180px
+	.top-bar
+		display flex
+	.navbar-nav
+		flex-direction row
+		width 100%
+		justify-content flex-end
+		.dropdown-menu
+			background rgba(black, .7)
+	.sub-menu.dropdown-menu
+		width 200px
+		padding-left 10px
+	.main-prods
+		.dropdown-menu
+			top 49px
+			border-radius 0
+			border none
+	.biologicos
+		a::after
+			transform rotate(-90deg)
+		.dropdown-menu
+			left 200px
+			top 6px
+			border-radius 0
+			border none
+	.farmaceuticos
+		a::after
+			transform rotate(-90deg)
+		.dropdown-menu
+			left 200px
+			top 50px
+			border-radius 0
+			border none
+	.especie-menu
+		a::after
+			transform rotate(-90deg)
+		.dropdown-menu
+			left 200px
+			top 125px
+			border-radius 0
+			border none
 	.page-header
 		h1
 			padding-top 30px

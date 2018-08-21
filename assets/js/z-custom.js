@@ -1,28 +1,54 @@
-$('.menu-menu-top-container').addClass('collapse navbar-collapse');
-$('.navbar-toggler').addClass('collapsed');
-$('#top-menu').addClass('navbar-nav mr-auto');
-$('#top-menu li').addClass('nav-item');
-$('#top-menu li a').addClass('nav-link');
+jQuery('.menu-menu-top-container').addClass('collapse navbar-collapse');
+jQuery('.navbar-toggler').addClass('collapsed');
+jQuery('#top-menu').addClass('navbar-nav mr-auto');
+jQuery('#top-menu li').addClass('nav-item');
+jQuery('#top-menu li a').addClass('nav-link');
 
-$('li.menu-item-has-children ul').first().addClass('dropdown-menu');
-$('li.menu-item-has-children a').first().addClass('dropdown-toggle');
-$('li.menu-item-has-children a').attr( 'data-toggle', 'dropdown' );
-
-$('ul.dropdown-menu ul li.menu-item-has-children a').first().addClass('dropdown-toggle');
-
-$('ul.dropdown-menu ul').addClass( 'dropdown-submenu' ).removeClass('dropdown-menu');
+jQuery('li.main-prods').addClass('dropdown');
+jQuery('li.main-prods a').first().addClass('dropdown-toggle').attr('id', 'navbarDropdownMenuLink').attr('data-toggle', 'dropdown');
+// jQuery('li.main-prods a').first().attr('data-toggle', 'dropdown');
 
 
+jQuery('li.main-prods ul').first().attr('aria-labelledby','navbarDropdownMenuLink').addClass('dropdown-menu');
+jQuery('.submenu-toggler .sub-menu').addClass('dropdown-menu');
+jQuery('.biologicos a').first().addClass('dropdown-toggle');
+jQuery('.farmaceuticos a').first().addClass('dropdown-toggle');
+jQuery('.especie-menu a').first().addClass('dropdown-toggle');
+jQuery('.submenu-toggler').first('a').on('click', function (e) {
+	e.stopPropagation();
+	console.log('clicked and stopped!');
+	jQuery(this).next().toggleClass('show');
+});
+
+jQuery('.main-prods a').on('click', function () {
+	jQuery('.submenu-toggler .dropdown-menu').removeClass('show');
+});
 
 
-$('.main-banners-container').slick({
+/*
+ *OOK
+ */
+
+$('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+  if (!$(this).next().hasClass('show')) {
+    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+  }
+  
+  var $subMenu = $(this).next(".dropdown-menu");
+  $subMenu.toggleClass('show');
+
+  $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+    $('.dropdown-submenu .show').removeClass("show");
+  });
+
+  return false;
+});
+
+jQuery('.main-banners-container').slick({
 	infinite: true,
 	dots: true,
 	slidesToShow: 1,
 	slidesToScroll: 1
 });
-
-
-
 
 console.log('ok');
