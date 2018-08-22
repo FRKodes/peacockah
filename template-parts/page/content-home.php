@@ -53,8 +53,13 @@
 				$terms = get_terms( 'product_category_use' );
 				$terms_ = get_terms( 'product_category' );?>
 				<div class="col-xs-12 col-sm-12"><h2 class="entry-title text-center azul mayus">Productos</h2></div>
+				
+				<div class="col-xs-12 by-category hidden-sm hidden-md hidden-lg hidden-xl">
+					<p class="entry-title mayus">Filtrar por categoría:</p>
+				</div>
+
 				<div class="products-selector-container col-sm-10 col-sm-offset-1 hidden-sm hidden-md hidden-lg hidden-xl">
-					<select name="products-selector" id=""><?php
+					<select name="products-selector" id="products-selector"><?php
 						if ( count( $terms ) > 0 ) {
 							foreach ( $terms as $term ) {?> 
 								<option value="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/uso/<?php echo $term->slug ?>"><?php echo $term->name ?></option><?php
@@ -62,11 +67,12 @@
 						}
 						if ( count( $terms_ ) > 0 ) {
 							foreach ( $terms_ as $term_ ) {?> 
-								<option value="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/categoria-producto/<?php echo $term_->slug ?>"><?php echo $term_->name ?></option><?php 
+								<option class="select-<?php echo $term_->slug; ?>" value="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/categoria-producto/<?php echo $term_->slug ?>"><?php echo $term_->name ?></option><?php 
 							}
 						}?>
 					</select>
 				</div>
+				<p class="by-category hidden-sm hidden-md hidden-lg hidden-xl">&nbsp;</p>
 			</div>
 			
 			<div class="row">

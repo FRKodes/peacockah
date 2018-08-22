@@ -85,6 +85,12 @@ jQuery('.main-prods a').on('click', function () {
 	jQuery('.submenu-toggler .dropdown-menu').removeClass('show');
 });
 
+jQuery('select#products-selector').change(function(){
+	if (jQuery(this).val() !== 0) {
+		window.location.href = jQuery(this).val();
+	}
+});
+
 
 /*
  *OOK
