@@ -5,6 +5,7 @@ turquesa = #6bbcab
 naranja = #f66626
 morado = #63349c
 amarillo = #fbcc00
+amarillo_ = #fbdd00
 gris_ = #4f5658
 azul_ = #0f78a8
 
@@ -28,9 +29,10 @@ a.biologicos
 a.bacterinas
 	color naranja
 .amarillo
-a.virologicos
 a.antibioticos
 	color amarillo
+a.virologicos
+	color amarillo_
 
 .verde
 	color verde
@@ -411,7 +413,9 @@ article.producto
 		.text-container
 			padding 26px 10px
 	.product_category_use_list
-		font-size .9em
+		font-size .85em
+		li
+			padding 0 4px
 @media screen and (min-width: 1200px)
 	.navbar-brand
 		img
