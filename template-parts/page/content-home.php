@@ -66,8 +66,12 @@
 							}
 						}
 						if ( count( $terms_ ) > 0 ) {
-							foreach ( $terms_ as $term_ ) {?> 
-								<option class="select-<?php echo $term_->slug; ?>" value="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/categoria-producto/<?php echo $term_->slug ?>"><?php echo $term_->name ?></option><?php 
+							foreach ( $terms_ as $term_ ) {
+								if($term_->slug != 'gallos' && $term_->slug != 'gallinas' && $term_->slug != 'pollos' && $term_->slug != 'guajolotes'){ 
+									?>
+									<option class="select-<?php echo $term_->slug; ?>" value="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/categoria-producto/<?php echo $term_->slug ?>"><?php echo $term_->name ?></option>
+									<?php 
+								}
 							}
 						}?>
 					</select>
