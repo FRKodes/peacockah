@@ -58,6 +58,25 @@ a.virologicos
 	img
 		width 100%
 		height auto
+.flag
+	width 30px
+	height 20px
+	margin-bottom 10px
+	&.flag-mx
+		background transparent url(../images/flag-mx.png) no-repeat center center
+		background-size cover
+	&.flag-usa
+		background transparent url(../images/flag-usa.png) no-repeat center center
+		background-size cover
+	&.show-this a
+		text-indent 40px
+		margin-top -10px
+	a
+		color transparent
+		width 200px
+		height 100%
+		display block
+		text-indent -10000px
 .der
 	text-align right
 .product_category_use_list
@@ -384,6 +403,15 @@ h1.entry-title.text-center
 			img
 				width 100%
 @media screen and (min-width: 992px)
+	.flag
+		width 30px
+		height 20px
+		margin-bottom 0
+		margin-right 10px
+		margin-top 6px
+		&.show-this a
+			text-indent -50px
+			margin-top 15px
 	.m-t--287
 		padding-top 20px
 		padding-bottom 20px
@@ -393,6 +421,10 @@ h1.entry-title.text-center
 		.navbar-nav
 			.nav-link
 				font-size 1em
+	.navbar-nav
+		li
+			a
+				font-size .8em
 	.navbar-brand
 		img
 			width 180px
@@ -461,6 +493,14 @@ h1.entry-title.text-center
 		li
 			padding 0 4px
 @media screen and (min-width: 1200px)
+	.navbar-nav
+		li
+			a
+				font-size 1em
+	.flag-mx
+	.flag-usa
+		margin-top 10px
+		margin-left 5px
 	.m-t--287
 		padding-top 50px
 		padding-bottom 50px

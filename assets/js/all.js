@@ -91,6 +91,10 @@ jQuery('select#products-selector').change(function(){
 	}
 });
 
+jQuery('.flag a').on('click', function(){
+	jQuery('.flag').removeClass('show-this');
+	jQuery(this).parent().addClass('show-this');
+});
 
 /*
  *OOK

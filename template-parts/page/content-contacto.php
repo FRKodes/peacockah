@@ -29,6 +29,7 @@
 						<b>U.S.A</b> <br>
 						+1 (510) 931-0425
 					</p>
+					<p>Escríbenos por WhatsApp, será un placer atenderte.</p>
 					<p class="text-center">
 						<?php the_post_thumbnail(); ?>
 					</p>
