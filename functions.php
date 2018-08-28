@@ -72,6 +72,55 @@ function create_banner_post_type() {
 }
 add_action( 'init', 'create_banner_post_type' );
 
+
+
+
+
+
+
+
+
+
+
+function create_promocion_post_type() {
+  register_post_type( 'promocion',
+	array(
+	  'labels' => array(
+		'name' => __( 'Promociones' ),
+		'singular_name' => __( 'Promoción' ),
+		'menu_name'				=> __( 'Promociones'),
+		'all_items'				=> __( 'Todos las promociones'),
+		'view_item'				=> __( 'Ver promoción'),
+		'add_new_item'			=> __( 'Agregar nuevo promoción'),
+		'add_new'				=> __( 'Agregar nuevo'),
+		'edit_item'				=> __( 'Editar Promoción'),
+		'update_item'			=> __( 'Actualizar Promoción'),
+		'search_items'			=> __( 'Buscar Promoción'),
+		'not_found'				=> __( 'Promoción no encontrada'),
+		'not_found_in_trash'	=> __( 'Promoción no encontrada en la papelera')
+	  ),
+	  'public' => true,
+	  'has_archive' => true,
+	  'supports' => array('title', 'editor', 'thumbnail'),
+	)
+  );
+}
+add_action( 'init', 'create_promocion_post_type' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function create_product_post_type() {
 
 	register_post_type( 'producto',
@@ -79,7 +128,7 @@ function create_product_post_type() {
 		'labels' => array(
 			'name' 					=> __( 'Productos' ),
 			'singular_name'			=> __( 'Producto' ),
-			'menu_name'				=> __( 'Producto'),
+			'menu_name'				=> __( 'Productos'),
 			'all_items'				=> __( 'Todos los productos'),
 			'view_item'				=> __( 'Ver producto'),
 			'add_new_item'			=> __( 'Agregar nuevo producto'),

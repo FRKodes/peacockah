@@ -57,6 +57,15 @@ $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
 jQuery('.main-banners-container').slick({
 	infinite: true,
 	dots: true,
+	autoplay: true,
+	slidesToShow: 1,
+	slidesToScroll: 1
+});
+
+jQuery('.promos-container').slick({
+	infinite: true,
+	dots: true,
+	autoplay: true,
 	slidesToShow: 1,
 	slidesToScroll: 1
 });
