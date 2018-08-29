@@ -23,9 +23,41 @@
 					</p>
 				</div>
 				<div class="col-xs-12">
-
 					<?php the_content(); ?>
 				</div>
+				<div class="col-xs-12">
+					<img class="img-100" src="<?php echo get_template_directory_uri(); ?>/assets/images/mapa_distribucion_peacock.jpg" alt="mapa de distribución peacock animal health">
+				</div>
+				
+				<div class="col-xs-12 col-sm-12 text-center">
+					<h2 class="m-b-40 m-t-40">SE UN DISTRIBUIDOR DE PEACOCK ANIMAL HEALTH</h2>
+					
+				</div>
+
+				<div class="col-xs-12 col-sm-8 col-lg-6 ml-auto mr-auto">
+
+					<p>Si estás interesado en distribuir los productos de Peacock Animal Health, llena este formulario y nos pondremos en contacto contigo a la brevedad.</p>
+					
+					<form action="" method="post">
+						<div class="form-group">
+							<input name="nombre" type="text" class="form-control" required="required" placeholder="Nombre*">
+						</div>
+						<div class="form-group">
+							<input name="correo" type="text" class="form-control" required="required" placeholder="Correo electrónico*">
+						</div>
+						<div class="form-group">
+							<input name="telefono" type="text" class="form-control" required="required" placeholder="Teléfono*">
+						</div>
+						<div class="form-group">
+							<textarea name="comentario" id="comentario" class="form-control" placeholder="Comentarios" cols="30" rows="10"></textarea>
+						</div>
+						<div class="form-group">
+							<input name="" type="submit" class="btn btn-primary black-btn" placeholder="">
+						</div>
+
+					</form>
+				</div>
+
 			</div>
 
 		</div>
