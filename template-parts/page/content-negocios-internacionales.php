@@ -30,13 +30,13 @@
 				</div>
 				
 				<div class="col-xs-12 col-sm-12 text-center">
-					<h2 class="m-b-40 m-t-40">SE UN DISTRIBUIDOR DE PEACOCK ANIMAL HEALTH</h2>
+					<h2 class="m-b-40 m-t-40">SE UN DISTRIBUIDOR DE PEACOCK® ANIMAL HEALTH</h2>
 					
 				</div>
 
 				<div class="col-xs-12 col-sm-8 col-lg-6 ml-auto mr-auto">
 
-					<p>Si estás interesado en distribuir los productos de Peacock Animal Health, llena este formulario y nos pondremos en contacto contigo a la brevedad.</p>
+					<p>Si estás interesado en distribuir los productos de PEACOCK® Animal Health, llena este formulario y nos pondremos en contacto contigo a la brevedad.</p>
 					
 					<form action="" method="post">
 						<div class="form-group">
