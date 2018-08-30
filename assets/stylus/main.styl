@@ -167,6 +167,24 @@ body
 .slick-slide
 	div
 		height 100%
+		overflow hidden
+	.col-xs-12.col-sm-6
+		margin-left -1000px
+		transition all 1s ease
+		opacity 0
+		&.der
+			margin-right -1000px
+			transition all 1s ease
+			opacity 0
+	&.slick-active
+		.col-xs-12.col-sm-6
+			margin-left 0
+			transition all 1s ease
+			opacity 1
+			&.der
+				margin-right 0
+				transition all 1s ease
+				opacity 1
 .slick-dots
 	text-align center
 	margin -40px 0 0 0

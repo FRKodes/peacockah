@@ -117,8 +117,10 @@ $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
 
 jQuery('.main-banners-container').slick({
 	infinite: true,
+	speed: 700,
 	dots: true,
 	autoplay: true,
+	autoplaySpeed: 6500,
 	slidesToShow: 1,
 	slidesToScroll: 1
 });
@@ -127,8 +129,10 @@ jQuery('.promos-container').slick({
 	infinite: true,
 	dots: true,
 	autoplay: true,
+	autoplaySpeed: 5000,
 	slidesToShow: 1,
 	slidesToScroll: 1
 });
 
-console.log('ok');
+
+
