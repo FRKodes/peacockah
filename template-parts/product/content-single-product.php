@@ -16,6 +16,11 @@
 		<div class="row">
 			<header class="entry-header col-xs-12 col-sm-5 col-md-5">
 				<div class="product-image"><img src="<?php the_field('detail_image') ?>" alt="<?php the_title() ?>"></div>
+				<p class="m-b-5">Síguenos en nuestras redes sociales:</p>
+				<ul class="social-detail">
+					<li><a target="_blank" href="https://www.facebook.com/PeacockAH/" class="icon-fb"></a></li>
+					<li><a target="_blank" href="https://www.instagram.com/peacockah/" class="icon-ig"></a></li>
+				</ul>
 			</header>
 			<div class="entry-content col-xs-12 col-sm-7 col-md-7">
 				<?php the_title( '<h1 class="entry-title bold">', '</h1>' ); ?>

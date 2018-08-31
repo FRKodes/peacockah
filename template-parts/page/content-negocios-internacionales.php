@@ -38,23 +38,13 @@
 
 					<p>Si estás interesado en distribuir los productos de PEACOCK® Animal Health, llena este formulario y nos pondremos en contacto contigo a la brevedad.</p>
 					
-					<form action="" method="post">
-						<div class="form-group">
-							<input name="nombre" type="text" class="form-control" required="required" placeholder="Nombre*">
-						</div>
-						<div class="form-group">
-							<input name="correo" type="text" class="form-control" required="required" placeholder="Correo electrónico*">
-						</div>
-						<div class="form-group">
-							<input name="telefono" type="text" class="form-control" required="required" placeholder="Teléfono*">
-						</div>
-						<div class="form-group">
-							<textarea name="comentario" id="comentario" class="form-control" placeholder="Comentarios" cols="30" rows="10"></textarea>
-						</div>
-						<div class="form-group">
-							<input name="" type="submit" class="btn btn-primary black-btn" placeholder="">
-						</div>
-
+					<form action="/sendmail-contact" method="post" id="contactForm">
+						<div class="form-group"><input name="nombre" type="text" class="form-control" required="required" placeholder="Nombre*"></div>
+						<div class="form-group"><input name="email" type="text" class="form-control" required="required" placeholder="Correo electrónico*"></div>
+						<div class="form-group"><input name="telefono" type="text" class="form-control" required="required" placeholder="Teléfono*"></div>
+						<div class="form-group"><textarea name="mensaje" id="mensaje" class="form-control" placeholder="Comentarios" cols="30" rows="10"></textarea></div>
+						<div class="form-group"><input value="Enviar" type="submit" class="btn btn-primary black-btn"></div>
+						<div class="sent_mail_alert text-center">¡GRACIAS! <br>tu mensaje se ha enviado exitosamente, nos pondremos en contacto contigo a la brevedad.</div>
 					</form>
 				</div>
 

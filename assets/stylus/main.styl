@@ -61,6 +61,8 @@ a.virologicos
 	font-weight 700
 .m-b-0
 	margin-bottom 0
+.m-b-5
+	margin-bottom 5px
 .m-t-40
 	margin-top 40px
 .m-b-20
@@ -179,11 +181,11 @@ body
 	&.slick-active
 		.col-xs-12.col-sm-6
 			margin-left 0
-			transition all 1s ease
+			transition all 2s ease
 			opacity 1
 			&.der
 				margin-right 0
-				transition all 1s ease
+				transition all 2s ease
 				opacity 1
 .slick-dots
 	text-align center
@@ -265,6 +267,20 @@ article.producto
 		img
 			width 100%
 			height auto
+	.social-detail
+		padding 0
+		margin 0
+		li
+			display inline-block
+			margin-right 10px
+			a
+				color black
+				transition color .5s ease
+				font-size 1.6em
+				&:hover
+					color gray
+					transition color .5s ease
+					text-decoration none
 	.entry-content
 		.entry-title
 			font-size 1.8em
@@ -303,6 +319,14 @@ h1.entry-title.text-center
 			display block
 .form-control
 	border-radius 0
+.sent_mail_alert
+	background rgba(black, .9)
+	color white
+	padding 30px
+	margin-top -200px
+	position relative
+	z-index 10
+	display none
 .site-footer
 	padding-top 30px
 	padding-bottom 0px
@@ -379,7 +403,6 @@ h1.entry-title.text-center
 		display inline-block
 		margin-left 0
 		margin-top -55px
-
 @media screen and (min-width: 768px)
 	.form-group
 		margin-bottom 2.5em
@@ -443,6 +466,9 @@ h1.entry-title.text-center
 			span
 				font-size 2.2em
 				margin-right 15px
+	.sent_mail_alert
+		padding 80px
+		margin-top -300px
 	.footer-title
 		color white
 		text-decoration underline
@@ -465,6 +491,10 @@ h1.entry-title.text-center
 		p
 			img
 				width 100%
+	.product-container
+		.info
+			.title
+				font-size 1.1em
 @media screen and (min-width: 992px)
 	.flag
 		width 30px

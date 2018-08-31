@@ -40,12 +40,13 @@
 
 					<p><b>Escríbenos</b></p>
 
-					<form action="">
-						<div class="form-group"><input type="text" name="" class="form-control" required="true" placeholder="Nombre*"></div>
-						<div class="form-group"><input type="text" name="" class="form-control" required="true" placeholder="Teléfono*"></div>
-						<div class="form-group"><input type="text" name="" class="form-control" required="true" placeholder="Correo*"></div>
-						<div class="form-group"><input type="text" name="" class="form-control" placeholder="Escríbenos tu mensaje"></div>
-						<div class="form-group"><input type="submit" name="" class="btn btn-primary black-btn pull-right" value="Enviar"></div>
+					<form action="/sendmail-contact" method="post" id="contactForm">
+						<div class="form-group"><input type="text" name="nombre" class="form-control" required="true" data-validate="required" placeholder="Nombre*"></div>
+						<div class="form-group"><input type="text" name="telefono" class="form-control" required="true" data-validate="required" placeholder="Teléfono*"></div>
+						<div class="form-group"><input type="text" name="email" class="form-control" required="true" data-validate="required|email" placeholder="Correo*"></div>
+						<div class="form-group"><input type="text" name="mensaje" class="form-control" placeholder="Escríbenos tu mensaje"></div>
+						<div class="form-group"><input type="submit" class="btn btn-primary black-btn pull-right" value="Enviar"></div>
+						<div class="sent_mail_alert text-center">¡GRACIAS! <br>tu mensaje se ha enviado exitosamente, nos pondremos en contacto contigo a la brevedad.</div>
 					</form>
 				</div>
 			</div>

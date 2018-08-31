@@ -19,7 +19,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300i,400,400i,700,900" rel="stylesheet">
+<meta name="description" content="Somos una empresa con presencia internacional, desarrollamos productos biológicos y farmacéuticos especializados con la mejor calidad del mercado para el cuidado de la salud animal, dirigido a grandes explotaciones ganaderas, animales de traspatio y animales de compañía.">
 <?php wp_head(); ?>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-84802922-18"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-84802922-18');
+</script>
 </head>
 
 <body <?php body_class(); ?>>

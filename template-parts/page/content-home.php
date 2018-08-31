@@ -62,14 +62,14 @@
 					<select name="products-selector" id="products-selector"><?php
 						if ( count( $terms ) > 0 ) {
 							foreach ( $terms as $term ) {?> 
-								<option value="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/uso/<?php echo $term->slug ?>"><?php echo $term->name ?></option><?php
+								<option value="/uso/<?php echo $term->slug ?>"><?php echo $term->name ?></option><?php
 							}
 						}
 						if ( count( $terms_ ) > 0 ) {
 							foreach ( $terms_ as $term_ ) {
 								if($term_->slug != 'gallos' && $term_->slug != 'gallinas' && $term_->slug != 'pollos' && $term_->slug != 'guajolotes'){ 
 									?>
-									<option class="select-<?php echo $term_->slug; ?>" value="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/categoria-producto/<?php echo $term_->slug ?>"><?php echo $term_->name ?></option>
+									<option class="select-<?php echo $term_->slug; ?>" value="/categoria-producto/<?php echo $term_->slug ?>"><?php echo $term_->name ?></option>
 									<?php 
 								}
 							}
@@ -83,10 +83,10 @@
 				<div class="col-xs-12 col-sm-12">
 					<ul class="product_category_use_list"><?php 
 						if ( count( $terms ) > 0 ) {
-							foreach ( $terms as $term ) {?> <li class="mayus <?php echo $term->slug ?>"><a href="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/uso/<?php echo $term->slug ?>"><?php echo $term->name ?></a></li><?php }
+							foreach ( $terms as $term ) {?> <li class="mayus <?php echo $term->slug ?>"><a href="/uso/<?php echo $term->slug ?>"><?php echo $term->name ?></a></li><?php }
 						}
 						if ( count( $terms_ ) > 0 ) {
-							foreach ( $terms_ as $term_ ) {?> <li class="mayus <?php echo $term_->slug ?>"><a href="<?php if($_SERVER['HTTP_HOST'] !== 'peacock.test'){ echo '/demo'; } ?>/categoria-producto/<?php echo $term_->slug ?>"><?php echo $term_->name ?></a></li><?php }
+							foreach ( $terms_ as $term_ ) {?> <li class="mayus <?php echo $term_->slug ?>"><a href="/categoria-producto/<?php echo $term_->slug ?>"><?php echo $term_->name ?></a></li><?php }
 						}?>
 					</ul>
 				</div>
