@@ -113,6 +113,24 @@ body
 		width 30px
 		height 4px
 		margin 3px 0
+.icon-search
+	background transparent url(../images/search-icon.svg) no-repeat left center
+	background-size 20px
+	.nav-link
+		padding-left 25px
+.search-form-container
+	input
+		height 0
+		padding 0
+		border none
+		transition height .2s ease
+	&.active
+		input
+			padding .5rem .75rem
+			height 36px
+			transition height .2s ease
+#search-button
+	display none
 .site-content-contain
 	padding-top 60px
 	overflow-x hidden
@@ -514,10 +532,35 @@ h1.entry-title.text-center
 		.navbar-nav
 			.nav-link
 				font-size 1em
+	.navbar-expand-lg
+		.icon-search
+			a.nav-link
+				padding-left 25px
 	.navbar-nav
 		li
 			a
 				font-size .8em
+	.top-bar
+		position relative
+	.search-form-container
+		position fixed
+		right 0
+		top 62px
+		width 100%
+		background rgba(black, .9)
+		&.active
+			padding 10px 35%
+			text-align center
+			#search-button
+				display inline-block
+				background gray
+			form
+				display flex
+	.navbar-expand-lg
+		.navbar-nav
+			.nav-link
+				padding-right .3em
+				padding-left .3em
 	.navbar-brand
 		img
 			width 180px
@@ -590,6 +633,8 @@ h1.entry-title.text-center
 		li
 			a
 				font-size 1em
+	.search-form-container
+		top 70px
 	.flag-mx
 	.flag-usa
 		margin-top 10px

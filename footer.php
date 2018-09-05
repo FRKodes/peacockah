@@ -46,7 +46,7 @@
 
 				<div class="row">
 					<div class="col-xs-12 col-sm-12">
-						<p class="text-center white m-b-0"><?php echo date('Y'); ?> PEACOCK® Animal Health. Todos los derechos reservados.</p>
+						<p class="text-center white m-b-0"><?php echo date('Y'); ?> PEACOCK® Animal Health. &copy; Todos los derechos reservados.</p>
 						<p class="text-center white credits">Desarrollado por <a class="white" href="http://www.blueterrier.mx" target="_blank" title="Made with love at Blue Terrier Studio"><b class="spaced">Blue Terrier Studio</b></a></p>
 					</div>
 				</div>

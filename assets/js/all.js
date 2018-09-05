@@ -110,6 +110,15 @@ jQuery('.flag a').on('click', function(){
 	jQuery(this).parent().addClass('show-this');
 });
 
+
+jQuery('.navbar-toggler').on('click', function(){
+	jQuery('.search-form-container').removeClass('active');
+});
+
+jQuery('.icon-search a').on('click', function(){
+	jQuery('.search-form-container').toggleClass('active');
+});
+
 /*
  *OOK
  */

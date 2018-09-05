@@ -19,6 +19,12 @@
 				<span class="bar"></span>
 			</button>
 			<?php wp_nav_menu( array( 'theme_location' => 'top-menu', 'menu_id' => 'top-menu') ); ?>
+			<div class="search-form-container">
+				<form action="/" method="get">
+					<input type="text" name="s" class="form-control" placeholder="Buscar productos">
+					<input type="submit" id="search-button" value="Buscar">
+				</form>
+			</div>
 		</div>
 	</div>
 </nav>
