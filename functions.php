@@ -32,7 +32,7 @@ function register_my_menus() {
 }
 
 function peacock_adding_styles() {
-	wp_register_style('peacock_stylesheet', get_template_directory_uri() .'/assets/css/peacock-style.css', array(), '1.6' );
+	wp_register_style('peacock_stylesheet', get_template_directory_uri() .'/assets/css/peacock-style.css', array(), '1.7' );
 	wp_enqueue_style('peacock_stylesheet');
 }
 add_action( 'wp_enqueue_scripts', 'peacock_adding_styles' );
@@ -40,7 +40,7 @@ add_action( 'wp_enqueue_scripts', 'peacock_adding_styles' );
 wp_enqueue_script( 'popper_script', get_template_directory_uri() . '/assets/js/popper.min.js', array(), '1.0', true );
 
 function peacock_adding_scripts() {
-	wp_register_script('peacock_script', get_template_directory_uri() . '/assets/js/all.js', array('jquery'),'1.3', true);
+	wp_register_script('peacock_script', get_template_directory_uri() . '/assets/js/all.js', array('jquery'),'1.4', true);
 	wp_enqueue_script('peacock_script');
 }
 add_action( 'wp_enqueue_scripts', 'peacock_adding_scripts' );
